@@ -1,6 +1,8 @@
-import pandas as pd
+import csv
 
 class lectura:
-    def lectura(slef):
-        df= pd.read_cvs('calificaciones.csv')
-        print(df)
+    def lectura_2pac(self):    
+        with open('calificaciones.csv', newline='') as csvfile:
+            lector = csv.reader(csvfile, delimiter=',')
+            for row in lector:
+                print(row)
