@@ -1,8 +1,7 @@
 import csv
 
 class lectura:
-    def lectura_2pac(self):    
-        with open('calificaciones.csv', newline='') as csvfile:
-            lector = csv.reader(csvfile, delimiter=',')
-            for row in lector:
-                print(row)
+    def __init__(self):
+        f = open('calificaciones.csv', 'r',encoding='utf-8')
+        datos=[]
+        lista_datos=[]
