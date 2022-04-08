@@ -97,7 +97,7 @@ class lectura:
 
                         """
 
-            x=((examen_1 + examen_2)*0,3)+(examen_3*0,4)                
+            x=((examen_1 + examen_2)*0.3)+(examen_3*0.4)                
 
 
 
