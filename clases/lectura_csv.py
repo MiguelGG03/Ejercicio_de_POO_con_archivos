@@ -11,11 +11,6 @@ class lectura:
         self.lista_datos=lista_datos
         self.diccionario=diccionario
 
-    def leer_csv(self):
-        with open(self.ubi, newline='') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                print(row)
-
     def crear_lista(self):
-        for i in self.f
+        for i in self.f:
+            i=i.rstrip('\n')
