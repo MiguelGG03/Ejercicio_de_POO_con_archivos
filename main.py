@@ -2,8 +2,8 @@ from clases.lectura_csv import *
 
 def main():
     l=lectura('calificaciones.csv')
-    notas=l.crear_lista()
-    print(notas[0][1])
+    lista_con_todo=l.crear_lista()
+    lista_nna=l.lista_con_nna()
 
 if __name__=='__main__':
     main()

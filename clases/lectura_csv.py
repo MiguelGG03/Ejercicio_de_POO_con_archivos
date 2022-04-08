@@ -18,4 +18,9 @@ class lectura:
         print(self.datos)
         return self.datos
 
+    def lista_con_nna(self):   #Nombres,notas y asistencias
+        for i in range(1,17):
+            temp=[self.datos[i][0],self.datos[i][2],self.datos[i][3],self.datos[i][4],self.datos[i][5],self.datos[i][6]]
+            self.lista_datos.append(temp)
+        print(self.lista_datos)
     
