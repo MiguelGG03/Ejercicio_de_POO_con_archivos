@@ -1,8 +1,8 @@
 import pandas as pd
 
 class lectura:
-    def __init__(self):
-        lector=open('calificaciones.csv','r',encoding='utf-8')
+    def __init__(self,ubi):
+        lector=open(ubi,'r',encoding='utf-8')
         datos=[]
         lista_datos=[]
         self.lector=lector
