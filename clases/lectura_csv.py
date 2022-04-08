@@ -77,26 +77,6 @@ class lectura:
                         else:
                             examen_3=float(self.datos[i][8].replace(',','.'))
 
-                        """
-                    if(float(self.datos[i][4].replace(',','.'))>4):
-                        examen_2=float(self.datos[i][4].replace(',','.'))
-                    else:
-                        if(self.datos[i][6]==''):
-                            examen_2=0
-                        else:
-                            examen_2=float(self.datos[i][6].replace(',','.')) 
-
-
-                    if(float(self.datos[i][7].replace(',','.'))>4 and self.datos[i][7]!=''):
-                        examen_3=float(self.datos[i][7].replace(',','.'))
-                    else:
-                        if(self.datos[i][8]==''):
-                            examen_3=0
-                        else:
-                            examen_3=float(self.datos[i][8].replace(',','.'))
-
-                        """
-
             x=((examen_1 + examen_2)*0.3)+(examen_3*0.4)                
 
 
