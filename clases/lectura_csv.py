@@ -85,3 +85,17 @@ class lectura:
             self.lista_notas.append(temp)
         
         return self.lista_notas
+
+    def aprobados_suspensos(self):
+        lista_que_necesito=[]
+        for i in range(1,17):
+            s2=self.datos[i][2].replace('%','')
+            s3=self.datos[i][3].replace(',','.')
+            s4=self.datos[i][4].replace(',','.')
+            s5=self.datos[i][5].replace(',','.')
+            s6=self.datos[i][6].replace(',','.')
+            s7=self.datos[i][7].replace(',','.')
+            s8=self.datos[i][8].replace(',','.')
+            h=[s2,s3,s4,s5,s6,s7,s8]
+            lista_que_necesito.append(h)
+        print(lista_que_necesito)

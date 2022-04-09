@@ -10,6 +10,6 @@ def main():
         print('Nombre:{}\nApellidos:{}\nMedia:{}\n\n'.format(lista_con_medias[i][0],
                                                         lista_con_medias[i][1],
                                                         lista_con_medias[i][2]))
-
+    l.aprobados_suspensos()
 if __name__=='__main__':
     main()
