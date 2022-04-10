@@ -10,8 +10,11 @@ def main():
         print('Nombre:{}\nApellidos:{}\nMedia:{}\n\n'.format(lista_con_medias[i][0],
                                                         lista_con_medias[i][1],
                                                         lista_con_medias[i][2]))
+    
     imprimir_resultados=l.aprobados_suspensos()
     for i in imprimir_resultados:
         print(i)
+
+
 if __name__=='__main__':
     main()
