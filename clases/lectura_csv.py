@@ -87,7 +87,9 @@ class lectura:
         return self.lista_notas
 
     def aprobados_suspensos(self):
-        lista_que_necesito=[]
+        lista_previa=[]
+        lista_aprobados=['Aprobados:']
+        lista_suspensos=['Suspensos:']
         for i in range(1,17):
             s2=self.datos[i][2].replace('%','')     #presencialidad
             s3=self.datos[i][3].replace(',','.')    #ordinaria 1
@@ -96,6 +98,30 @@ class lectura:
             s6=self.datos[i][6].replace(',','.')    #extraordinaria 2
             s7=self.datos[i][7].replace(',','.')    #practica
             s8=self.datos[i][8].replace(',','.')    #practica extra
-            h=[s2,s3,s4,s5,s6,s7,s8]
-            lista_que_necesito.append(h)
-        print(lista_que_necesito)
+            s9=self.lista_notas[i][2]               #medias
+            h=[s2,s3,s4,s5,s6,s7,s8,s9]
+            lista_previa.append(h)
+        
+        for i in range(1,17):
+            if(lista_previa[i][0]>=75):
+
+                if(self.datos[i][3].replace(',','.')>=4 or self.datos[i][5].replace(',','.')>=4):
+
+                    if(self.datos[i][4].replace(',','.')>=4 or self.datos[i][6].replace(',','.')>=4):
+
+                        if(self.datos[i][7].replace(',','.')>=4 or self.datos[i][8].replace(',','.')>=4):
+
+                             if(self.lista_notas[i][2]>=5):
+
+                                 lista_aprobados.append(self.datos[i][1]+' '+self.datos[i][0])
+                        else:
+                            lista_suspensos.append(self.datos[i][1]+' '+self.datos[i][0])
+                    else:
+                        lista_suspensos.append(self.datos[i][1]+' '+self.datos[i][0])
+                else:
+                    lista_suspensos.append(self.datos[i][1]+' '+self.datos[i][0])
+            else:
+                lista_suspensos.append(self.datos[i][1]+' '+self.datos[i][0])
+        
+        lista_final=[lista_aprobados,' ',lista_suspensos]
+        return lista_final
