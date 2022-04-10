@@ -91,14 +91,14 @@ class lectura:
         lista_aprobados=['Aprobados:']
         lista_suspensos=['Suspensos:']
         for i in range(1,17):
-            s2=self.datos[i][2].replace('%','')     #presencialidad
-            s3=self.datos[i][3].replace(',','.')    #ordinaria 1
-            s4=self.datos[i][4].replace(',','.')    #ordinaria 2
-            s5=self.datos[i][5].replace(',','.')    #extraordinaria 1
-            s6=self.datos[i][6].replace(',','.')    #extraordinaria 2
-            s7=self.datos[i][7].replace(',','.')    #practica
-            s8=self.datos[i][8].replace(',','.')    #practica extra
-            s9=self.lista_notas[i][2]               #medias
+            s2=int(self.datos[i][2].replace('%',''))        #presencialidad
+            s3=float(self.datos[i][3].replace(',','.'))     #ordinaria 1
+            s4=float(self.datos[i][4].replace(',','.'))     #ordinaria 2
+            s5=float(self.datos[i][5].replace(',','.'))     #extraordinaria 1
+            s6=float(self.datos[i][6].replace(',','.'))     #extraordinaria 2
+            s7=float(self.datos[i][7].replace(',','.'))     #practica
+            s8=float(self.datos[i][8].replace(',','.'))     #practica extra
+            s9=self.lista_notas[i-1][2]                     #medias
             h=[s2,s3,s4,s5,s6,s7,s8,s9]
             lista_previa.append(h)
         
