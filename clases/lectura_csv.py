@@ -141,13 +141,13 @@ class lectura:
         for i in range(0,16):
             if(lista_previa[i][0]>=75):
 
-                if(self.datos[i][1]>=4):
+                if(lista_previa[i][1]>=4):
 
-                    if(self.datos[i][2].replace(',','.')>=4):
+                    if(lista_previa[i][2]>=4):
 
-                        if(self.datos[i][3].replace(',','.')>=4):
+                        if(lista_previa[i][3]>=4):
 
-                             if(self.lista_notas[i][4]>=5):
+                             if(lista_previa[i][4]>=5):
 
                                  lista_aprobados.append(self.datos[i+1][1]+' '+self.datos[i+1][0])
                         else:
