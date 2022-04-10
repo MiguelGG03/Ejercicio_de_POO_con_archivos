@@ -81,7 +81,7 @@ class lectura:
 
 
 
-            temp=[self.datos[i][1],self.datos[i][0],x]
+            temp=[self.datos[i][1],self.datos[i][0],examen_1,examen_2,examen_3,x]
             self.lista_notas.append(temp)
         
         return self.lista_notas
@@ -92,20 +92,32 @@ class lectura:
         lista_suspensos=['Suspensos:']
         for i in range(1,17):
             s2=int(self.datos[i][2].replace('%',''))        #presencialidad
+            
+            s3=float(self.lista_notas[i-1][2])               #ordinaria 1
+            s4=float(self.lista_notas[i-1][3])               #ordinaria 2
+            s5=float(self.lista_notas[i-1][4])               #practica
+            
+            """
             s3=float(self.datos[i][3].replace(',','.'))     #ordinaria 1
             s4=float(self.datos[i][4].replace(',','.'))     #ordinaria 2
             s5=float(self.datos[i][5].replace(',','.'))     #extraordinaria 1
             s6=float(self.datos[i][6].replace(',','.'))     #extraordinaria 2
             s7=float(self.datos[i][7].replace(',','.'))     #practica
             s8=float(self.datos[i][8].replace(',','.'))     #practica extra
-            s9=self.lista_notas[i-1][2]                     #medias
-            h=[s2,s3,s4,s5,s6,s7,s8,s9]
+            
+            """
+            
+            s6=self.lista_notas[i-1][5]                     #medias
+            h=[s2,s3,s4,s5,s6]
             lista_previa.append(h)
         
+
+
+        """
         for i in range(1,17):
             if(lista_previa[i][0]>=75):
 
-                if(self.datos[i][3].replace(',','.')>=4 or self.datos[i][5].replace(',','.')>=4):
+                if(self.datos[i][3].replace(',','.'))>=4 or self.datos[i][5].replace(',','.')>=4):
 
                     if(self.datos[i][4].replace(',','.')>=4 or self.datos[i][6].replace(',','.')>=4):
 
@@ -122,6 +134,31 @@ class lectura:
                     lista_suspensos.append(self.datos[i][1]+' '+self.datos[i][0])
             else:
                 lista_suspensos.append(self.datos[i][1]+' '+self.datos[i][0])
+
+        """
+
+
+        for i in range(0,16):
+            if(lista_previa[i][0]>=75):
+
+                if(self.datos[i][1]>=4):
+
+                    if(self.datos[i][2].replace(',','.')>=4):
+
+                        if(self.datos[i][3].replace(',','.')>=4):
+
+                             if(self.lista_notas[i][4]>=5):
+
+                                 lista_aprobados.append(self.datos[i+1][1]+' '+self.datos[i+1][0])
+                        else:
+                            lista_suspensos.append(self.datos[i+1][1]+' '+self.datos[i+1][0])
+                    else:
+                        lista_suspensos.append(self.datos[i+1][1]+' '+self.datos[i+1][0])
+                else:
+                    lista_suspensos.append(self.datos[i+1][1]+' '+self.datos[i+1][0])
+            else:
+                lista_suspensos.append(self.datos[i+1][1]+' '+self.datos[i+1][0])
+        
         
         lista_final=[lista_aprobados,' ',lista_suspensos]
         return lista_final
